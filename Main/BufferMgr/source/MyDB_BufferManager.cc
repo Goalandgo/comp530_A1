@@ -7,6 +7,7 @@
 #include <fcntl.h>
 #include <unistd.h>
 #include <stdlib.h>
+#include <iostream>
 
 
 using namespace std;
@@ -18,7 +19,7 @@ MyDB_PageHandle MyDB_BufferManager :: getPage (MyDB_TablePtr whichTable, long i)
     if (it == this->Map.end()) {
         if (!this->unUsedPages.empty()) {
             char * addr = this->unUsedPages.front();
-
+            unUsedPages.pop();
             MyDB_pagetrl page = make_shared<MyDB_Page>(addr, whichTable, i, this, false, false);
             nodeptr cur = make_shared<Node>(page);
 
@@ -48,8 +49,17 @@ MyDB_PageHandle MyDB_BufferManager :: getPage () {
     if(!this->unUsedPages.empty()){
 
         char * addr = this->unUsedPages.front();
+        unUsedPages.pop();
 
-        MyDB_pagetrl page = make_shared<MyDB_Page>(addr, nullptr, this->tempFileCurPosition++, this, false, true);
+        int offset = 0;
+        if (reCycledTempfile.empty())
+            offset = tempFileCurPosition++;
+        else{
+            offset = reCycledTempfile.front();
+            reCycledTempfile.pop();
+        }
+
+        MyDB_pagetrl page = make_shared<MyDB_Page>(addr, nullptr, offset, this, false, true);
         nodeptr cur = make_shared<Node>(page);
 
         MyDB_PageHandle result = make_shared<MyDB_PageHandleBase>(cur);
@@ -63,7 +73,9 @@ MyDB_PageHandle MyDB_BufferManager :: getPage () {
         return getPage();
     }
 }
-
+void MyDB_BufferManager :: reCycleTempFile(nodeptr cur){
+    this->reCycledTempfile.push(cur->page->offset);
+}
 
 MyDB_PageHandle MyDB_BufferManager :: getPinnedPage (MyDB_TablePtr whichTable, long i) {
     pair<string,long> key(whichTable->getName(),i);
@@ -72,7 +84,7 @@ MyDB_PageHandle MyDB_BufferManager :: getPinnedPage (MyDB_TablePtr whichTable, l
     if (it == this->Map.end()) {
         if (!this->unUsedPages.empty()) {
             char * addr = this->unUsedPages.front();
-
+            unUsedPages.pop();
             MyDB_pagetrl page = make_shared<MyDB_Page>(addr, whichTable, i, this, true, false);
             nodeptr cur = make_shared<Node>(page);
 
@@ -102,8 +114,17 @@ MyDB_PageHandle MyDB_BufferManager :: getPinnedPage () {
     if(!this->unUsedPages.empty()){
 
         char * addr = this->unUsedPages.front();
+        unUsedPages.pop();
 
-        MyDB_pagetrl page = make_shared<MyDB_Page>(addr, nullptr, this->tempFileCurPosition++, this, true, true);
+        int offset = 0;
+        if (reCycledTempfile.empty())
+            offset = tempFileCurPosition++;
+        else{
+            offset = reCycledTempfile.front();
+            reCycledTempfile.pop();
+        }
+
+        MyDB_pagetrl page = make_shared<MyDB_Page>(addr, nullptr, offset, this, true, true);
         nodeptr cur = make_shared<Node>(page);
 
         MyDB_PageHandle result = make_shared<MyDB_PageHandleBase>(cur);
@@ -140,10 +161,11 @@ MyDB_BufferManager :: MyDB_BufferManager (size_t pageSize, size_t numPages, stri
 MyDB_BufferManager :: ~MyDB_BufferManager () {
     nodeptr cur = this->head->next;
     while (cur != this->tail) {
-        if (cur->page->isDirty) {
-            string fileName = cur->page->isAnon ? this->tempFile : cur->page->tableOwner->getStorageLoc();
+        if (cur->page->isDirty && cur->page->hasNotBeenEvicted && !cur->page->isAnon) {
+            string fileName = cur->page->tableOwner->getStorageLoc();
             writeData(fileName, cur->page->offset, cur->page->address);
         }
+        cur = cur->next;
     }
 
     for ( auto it = filePool.begin(); it != filePool.end(); ++it ) //ERROR HERE
@@ -165,7 +187,7 @@ void MyDB_BufferManager :: readData(string fileName, long offset, char* address)
     } else {
         fileHandle = it->second;
     }
-    lseek(fileHandle, offset * this->pageSize,  SEEK_CUR);
+    lseek(fileHandle, offset * this->pageSize,  SEEK_SET);
     read(fileHandle, address, this->pageSize);
 }
 
@@ -179,9 +201,11 @@ void MyDB_BufferManager :: writeData(string fileName, long offset, char* address
     } else {
         fileHandle = it->second;
     }
-    lseek(fileHandle, offset * this->pageSize,  SEEK_CUR);
+    lseek(fileHandle, offset * this->pageSize,  SEEK_SET);
     write(fileHandle, address, this->pageSize);
+    cout<<"write to file "<<fileName<<" "<<fileHandle<<" contents: "<<address<<endl;
 }
+
 void MyDB_BufferManager :: insertNode(nodeptr cur){
     if (cur == NULL) return;
     nodeptr pre = this->tail->pre;
@@ -231,6 +255,7 @@ void MyDB_BufferManager :: reloadVictim(nodeptr victim){
         this->evict();
         reloadVictim(victim);
     }
+    victim->page->hasNotBeenEvicted = true;
 }
 
 bool MyDB_BufferManager :: evict(){
@@ -243,8 +268,9 @@ bool MyDB_BufferManager :: evict(){
     MyDB_pagetrl page = victim->page;
 
     if (page->isDirty) {
-        string fileName = page->isAnon ? page->tableOwner->getStorageLoc() : this->tempFile;
+        string fileName = page->isAnon ? this->tempFile : page->tableOwner->getStorageLoc();
         writeData(fileName, page->offset, page->address);
+        page->isDirty = false;
     }
 
     page->hasNotBeenEvicted = false;

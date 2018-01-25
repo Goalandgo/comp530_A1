@@ -45,6 +45,8 @@ unistd.h
 -
 stdlib.h
 -
+iostream
+-
 
 /Users/jinjianwei/Desktop/A1/Main/BufferMgr/source/MyDB_Page.cpp
 ../headers/MyDB_Page.h

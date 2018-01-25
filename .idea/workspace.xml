@@ -14,16 +14,19 @@
     <list default="true" id="470a8332-3b82-4bc6-9d8b-2ca6ba972506" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change beforePath="$PROJECT_DIR$/Main/BufferMgr/headers/MyDB_BufferManager.h" afterPath="$PROJECT_DIR$/Main/BufferMgr/headers/MyDB_BufferManager.h" />
-      <change beforePath="$PROJECT_DIR$/Main/BufferMgr/headers/MyDB_PageHandle.h" afterPath="$PROJECT_DIR$/Main/BufferMgr/headers/MyDB_PageHandle.h" />
       <change beforePath="$PROJECT_DIR$/Main/BufferMgr/source/MyDB_BufferManager.cc" afterPath="$PROJECT_DIR$/Main/BufferMgr/source/MyDB_BufferManager.cc" />
       <change beforePath="$PROJECT_DIR$/Main/BufferMgr/source/MyDB_Page.cpp" afterPath="$PROJECT_DIR$/Main/BufferMgr/source/MyDB_Page.cpp" />
       <change beforePath="$PROJECT_DIR$/Main/BufferMgr/source/MyDB_PageHandle.cc" afterPath="$PROJECT_DIR$/Main/BufferMgr/source/MyDB_PageHandle.cc" />
+      <change beforePath="$PROJECT_DIR$/Main/BufferTest/source/BufferQUnit.cc" afterPath="$PROJECT_DIR$/Main/BufferTest/source/BufferQUnit.cc" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/A1" afterPath="$PROJECT_DIR$/cmake-build-debug/A1" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/A1.dir/CXX.includecache" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/A1.dir/CXX.includecache" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/A1.dir/Main/BufferMgr/source/MyDB_BufferManager.cc.o" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/A1.dir/Main/BufferMgr/source/MyDB_BufferManager.cc.o" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/A1.dir/Main/BufferMgr/source/MyDB_Page.cpp.o" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/A1.dir/Main/BufferMgr/source/MyDB_Page.cpp.o" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/A1.dir/Main/BufferMgr/source/MyDB_PageHandle.cc.o" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/A1.dir/Main/BufferMgr/source/MyDB_PageHandle.cc.o" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/A1.dir/Main/BufferTest/source/BufferQUnit.cc.o" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/A1.dir/Main/BufferTest/source/BufferQUnit.cc.o" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/barfoo" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/foobar" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/tempDSFSD" afterPath="" />
     </list>
     <ignored path="$PROJECT_DIR$/cmake-build-debug/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -36,69 +39,45 @@
   <component name="ExecutionTargetManager" SELECTED_TARGET="CMakeBuildProfile:Debug" />
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file leaf-file-name="BufferQUnit.cc" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/Main/BufferTest/source/BufferQUnit.cc">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="327">
+              <caret line="91" column="0" lean-forward="false" selection-start-line="91" selection-start-column="0" selection-end-line="91" selection-end-column="0" />
+              <folding>
+                <element signature="e#48#103#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Makefile" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/cmake-build-debug/Makefile">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="0">
+              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
       <file leaf-file-name="MyDB_BufferManager.h" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Main/BufferMgr/headers/MyDB_BufferManager.h">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="170">
-              <caret line="61" column="63" lean-forward="false" selection-start-line="61" selection-start-column="4" selection-end-line="61" selection-end-column="64" />
-              <folding>
-                <element signature="e#44#68#0" expanded="true" />
-              </folding>
+            <state relative-caret-position="657">
+              <caret line="63" column="37" lean-forward="false" selection-start-line="63" selection-start-column="4" selection-end-line="63" selection-end-column="38" />
+              <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="MyDB_BufferManager.cc" pinned="false" current-in-tab="true">
+      <file leaf-file-name="MyDB_BufferManager.cc" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Main/BufferMgr/source/MyDB_BufferManager.cc">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="250">
-              <caret line="173" column="43" lean-forward="true" selection-start-line="173" selection-start-column="43" selection-end-line="173" selection-end-column="43" />
+            <state relative-caret-position="521">
+              <caret line="270" column="57" lean-forward="false" selection-start-line="270" selection-start-column="57" selection-end-line="270" selection-end-column="57" />
               <folding>
                 <element signature="e#44#83#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="MyDB_Page.cpp" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Main/BufferMgr/source/MyDB_Page.cpp">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="150">
-              <caret line="11" column="0" lean-forward="false" selection-start-line="11" selection-start-column="0" selection-end-line="11" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Node.h" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Main/BufferMgr/headers/Node.h">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="285">
-              <caret line="19" column="22" lean-forward="false" selection-start-line="19" selection-start-column="22" selection-end-line="19" selection-end-column="22" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="MyDB_Page.h" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Main/BufferMgr/headers/MyDB_Page.h">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="45">
-              <caret line="15" column="25" lean-forward="false" selection-start-line="15" selection-start-column="25" selection-end-line="15" selection-end-column="25" />
-              <folding>
-                <element signature="e#86#103#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="MyDB_PageHandle.h" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Main/BufferMgr/headers/MyDB_PageHandle.h">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="60">
-              <caret line="4" column="0" lean-forward="false" selection-start-line="4" selection-start-column="0" selection-end-line="4" selection-end-column="0" />
-              <folding>
-                <element signature="e#46#63#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -107,11 +86,9 @@
       <file leaf-file-name="MyDB_PageHandle.cc" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Main/BufferMgr/source/MyDB_PageHandle.cc">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="600">
-              <caret line="40" column="30" lean-forward="false" selection-start-line="40" selection-start-column="30" selection-end-line="40" selection-end-column="30" />
-              <folding>
-                <element signature="e#46#63#0" expanded="true" />
-              </folding>
+            <state relative-caret-position="495">
+              <caret line="35" column="35" lean-forward="false" selection-start-line="35" selection-start-column="35" selection-end-line="35" selection-end-column="35" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -136,10 +113,11 @@
         <option value="$PROJECT_DIR$/Main/BufferMgr/source/Node.cpp" />
         <option value="$PROJECT_DIR$/Main/BufferMgr/headers/Node.h" />
         <option value="$PROJECT_DIR$/Main/BufferMgr/headers/MyDB_Page.h" />
-        <option value="$PROJECT_DIR$/Main/BufferMgr/source/MyDB_PageHandle.cc" />
         <option value="$PROJECT_DIR$/Main/BufferMgr/headers/MyDB_PageHandle.h" />
-        <option value="$PROJECT_DIR$/Main/BufferMgr/source/MyDB_Page.cpp" />
         <option value="$PROJECT_DIR$/Main/BufferMgr/headers/MyDB_BufferManager.h" />
+        <option value="$PROJECT_DIR$/Main/BufferMgr/source/MyDB_PageHandle.cc" />
+        <option value="$PROJECT_DIR$/Main/BufferMgr/source/MyDB_Page.cpp" />
+        <option value="$PROJECT_DIR$/Main/BufferTest/source/BufferQUnit.cc" />
         <option value="$PROJECT_DIR$/Main/BufferMgr/source/MyDB_BufferManager.cc" />
       </list>
     </option>
@@ -196,7 +174,7 @@
             <path>
               <item name="A1" type="dad4c3:CidrFilesViewHelper$MyProjectTreeStructure$1" />
               <item name="A1" type="462c0819:PsiDirectoryNode" />
-              <item name="Build" type="462c0819:PsiDirectoryNode" />
+              <item name="cmake-build-debug" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="A1" type="dad4c3:CidrFilesViewHelper$MyProjectTreeStructure$1" />
@@ -227,6 +205,19 @@
               <item name="A1" type="dad4c3:CidrFilesViewHelper$MyProjectTreeStructure$1" />
               <item name="A1" type="462c0819:PsiDirectoryNode" />
               <item name="Main" type="462c0819:PsiDirectoryNode" />
+              <item name="BufferTest" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="A1" type="dad4c3:CidrFilesViewHelper$MyProjectTreeStructure$1" />
+              <item name="A1" type="462c0819:PsiDirectoryNode" />
+              <item name="Main" type="462c0819:PsiDirectoryNode" />
+              <item name="BufferTest" type="462c0819:PsiDirectoryNode" />
+              <item name="source" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="A1" type="dad4c3:CidrFilesViewHelper$MyProjectTreeStructure$1" />
+              <item name="A1" type="462c0819:PsiDirectoryNode" />
+              <item name="Main" type="462c0819:PsiDirectoryNode" />
               <item name="Catalog" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
@@ -239,6 +230,11 @@
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="settings.editor.selected.configurable" value="editor.preferences.import" />
     <property name="WebServerToolWindowFactoryState" value="false" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/cmake-build-debug/CMakeFiles" />
+    </key>
   </component>
   <component name="RunDashboard">
     <option name="ruleStates">
@@ -256,7 +252,7 @@
     <configuration name="A1" type="CMakeRunConfiguration" factoryName="Application" PASS_PARENT_ENVS_2="true" PROJECT_NAME="A1" TARGET_NAME="A1" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="A1" RUN_TARGET_NAME="A1">
       <envs />
     </configuration>
-    <configuration name="Build All" type="CMakeRunConfiguration" factoryName="Application" PASS_PARENT_ENVS_2="true" CONFIG_NAME="Debug" EXPLICIT_BUILD_TARGET_NAME="all">
+    <configuration name="Build All" type="CMakeRunConfiguration" factoryName="Application" PASS_PARENT_ENVS_2="true" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="A1" RUN_TARGET_NAME="A1" EXPLICIT_BUILD_TARGET_NAME="all">
       <envs />
     </configuration>
     <list size="2">
@@ -278,27 +274,28 @@
       <option name="presentableId" value="Default" />
       <updated>1516775566686</updated>
       <workItem from="1516775567846" duration="4892000" />
-      <workItem from="1516820939113" duration="19074000" />
+      <workItem from="1516820939113" duration="19235000" />
+      <workItem from="1516851768430" duration="11405000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="23966000" />
+    <option name="totallyTimeSpent" value="35532000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="0" width="1440" height="900" extended-state="0" />
+    <frame x="0" y="0" width="1920" height="1080" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2013889" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.15104167" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.1882353" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.18737864" sideWeight="0.46822917" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="CMake" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.31764707" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.3407767" sideWeight="0.11302083" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.3407767" sideWeight="0.88697916" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.2485437" sideWeight="0.48541668" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
@@ -324,18 +321,78 @@
           <option name="timeStamp" value="2" />
         </line-breakpoint>
       </breakpoints>
-      <option name="time" value="3" />
+      <option name="time" value="6" />
     </breakpoint-manager>
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/Main/BufferMgr/headers/MyDB_BufferManager.h">
       <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="915">
+          <caret line="61" column="63" lean-forward="false" selection-start-line="61" selection-start-column="4" selection-end-line="61" selection-end-column="64" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Main/BufferMgr/source/MyDB_Page.cpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="165">
+          <caret line="11" column="0" lean-forward="false" selection-start-line="11" selection-start-column="0" selection-end-line="11" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Main/BufferMgr/headers/Node.h">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="285">
+          <caret line="19" column="22" lean-forward="false" selection-start-line="19" selection-start-column="22" selection-end-line="19" selection-end-column="22" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Main/BufferMgr/headers/MyDB_Page.h">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="225">
+          <caret line="15" column="25" lean-forward="false" selection-start-line="15" selection-start-column="25" selection-end-line="15" selection-end-column="25" />
+          <folding>
+            <element signature="e#86#103#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Main/BufferMgr/headers/MyDB_PageHandle.h">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="60">
+          <caret line="4" column="0" lean-forward="false" selection-start-line="4" selection-start-column="0" selection-end-line="4" selection-end-column="0" />
+          <folding>
+            <element signature="e#46#63#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Main/BufferMgr/source/MyDB_PageHandle.cc">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="600">
+          <caret line="40" column="30" lean-forward="false" selection-start-line="40" selection-start-column="30" selection-end-line="40" selection-end-column="30" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Main/BufferMgr/source/MyDB_BufferManager.cc">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2595">
+          <caret line="173" column="43" lean-forward="true" selection-start-line="173" selection-start-column="43" selection-end-line="173" selection-end-column="43" />
+          <folding>
+            <element signature="e#44#83#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Main/BufferMgr/headers/MyDB_BufferManager.h">
+      <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding>
-            <element signature="e#44#68#0" expanded="true" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -354,7 +411,7 @@
         <state relative-caret-position="225">
           <caret line="15" column="44" lean-forward="true" selection-start-line="15" selection-start-column="44" selection-end-line="15" selection-end-column="44" />
           <folding>
-            <element signature="e#86#103#0" expanded="true" />
+            <element signature="e#86#103#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -364,7 +421,7 @@
         <state relative-caret-position="585">
           <caret line="39" column="17" lean-forward="false" selection-start-line="39" selection-start-column="17" selection-end-line="39" selection-end-column="17" />
           <folding>
-            <element signature="e#46#63#0" expanded="true" />
+            <element signature="e#46#63#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -373,7 +430,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -381,7 +437,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -389,6 +444,21 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="105">
           <caret line="8" column="24" lean-forward="false" selection-start-line="8" selection-start-column="24" selection-end-line="8" selection-end-column="24" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file:///usr/include/sys/fcntl.h">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="224">
+          <caret line="513" column="4" lean-forward="false" selection-start-line="513" selection-start-column="4" selection-end-line="513" selection-end-column="4" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file:///Library/Developer/CommandLineTools/usr/include/c++/v1/memory">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="211">
+          <caret line="2205" column="14" lean-forward="false" selection-start-line="2205" selection-start-column="14" selection-end-line="2205" selection-end-column="14" />
           <folding />
         </state>
       </provider>
@@ -401,19 +471,13 @@
         </state>
       </provider>
     </entry>
-    <entry file="file:///usr/include/sys/fcntl.h">
+    <entry file="file://$PROJECT_DIR$/Main/BufferMgr/headers/MyDB_Page.h">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="224">
-          <caret line="513" column="4" lean-forward="false" selection-start-line="513" selection-start-column="4" selection-end-line="513" selection-end-column="4" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file:///Library/Developer/CommandLineTools/usr/include/c++/v1/memory">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="211">
-          <caret line="2205" column="14" lean-forward="false" selection-start-line="2205" selection-start-column="14" selection-end-line="2205" selection-end-column="14" />
-          <folding />
+        <state relative-caret-position="45">
+          <caret line="15" column="25" lean-forward="false" selection-start-line="15" selection-start-column="25" selection-end-line="15" selection-end-column="25" />
+          <folding>
+            <element signature="e#86#103#0" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -422,55 +486,103 @@
         <state relative-caret-position="60">
           <caret line="4" column="0" lean-forward="false" selection-start-line="4" selection-start-column="0" selection-end-line="4" selection-end-column="0" />
           <folding>
-            <element signature="e#46#63#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Main/BufferMgr/source/MyDB_PageHandle.cc">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="600">
-          <caret line="40" column="30" lean-forward="false" selection-start-line="40" selection-start-column="30" selection-end-line="40" selection-end-column="30" />
-          <folding>
-            <element signature="e#46#63#0" expanded="true" />
+            <element signature="e#46#63#0" expanded="false" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/Main/BufferMgr/source/MyDB_Page.cpp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="150">
-          <caret line="11" column="0" lean-forward="false" selection-start-line="11" selection-start-column="0" selection-end-line="11" selection-end-column="0" />
+        <state relative-caret-position="225">
+          <caret line="16" column="35" lean-forward="false" selection-start-line="16" selection-start-column="35" selection-end-line="16" selection-end-column="35" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Main/BufferMgr/headers/MyDB_Page.h">
+    <entry file="file://$PROJECT_DIR$/Main/BufferMgr/source/MyDB_PageHandle.cc">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="45">
-          <caret line="15" column="25" lean-forward="false" selection-start-line="15" selection-start-column="25" selection-end-line="15" selection-end-column="25" />
-          <folding>
-            <element signature="e#86#103#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="495">
+          <caret line="35" column="35" lean-forward="false" selection-start-line="35" selection-start-column="35" selection-end-line="35" selection-end-column="35" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/cmake-build-debug/CMakeFiles/foobar">
+      <provider selected="true" editor-type-id="LargeFileEditor">
+        <state relative-caret-position="150">
+          <caret line="0" column="1957" lean-forward="false" selection-start-line="0" selection-start-column="1957" selection-end-line="0" selection-end-column="1957" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/cmake-build-debug/barfoo">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/cmake-build-debug/tempDSFSD">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="2568" lean-forward="false" selection-start-line="0" selection-start-column="2568" selection-end-line="0" selection-end-column="2622" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file:///Library/Developer/CommandLineTools/usr/include/c++/v1/vector">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="237">
+          <caret line="1596" column="0" lean-forward="false" selection-start-line="1596" selection-start-column="0" selection-end-line="1596" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/Main/BufferMgr/headers/MyDB_BufferManager.h">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="170">
-          <caret line="61" column="63" lean-forward="false" selection-start-line="61" selection-start-column="4" selection-end-line="61" selection-end-column="64" />
-          <folding>
-            <element signature="e#44#68#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="657">
+          <caret line="63" column="37" lean-forward="false" selection-start-line="63" selection-start-column="4" selection-end-line="63" selection-end-column="38" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/cmake-build-debug/Makefile">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/cmake-build-debug/foobar">
+      <provider editor-type-id="LargeFileEditor">
+        <state relative-caret-position="301">
+          <caret line="0" column="22982" lean-forward="true" selection-start-line="0" selection-start-column="22982" selection-end-line="0" selection-end-column="22982" />
+        </state>
+      </provider>
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="64" lean-forward="true" selection-start-line="0" selection-start-column="64" selection-end-line="0" selection-end-column="64" />
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/Main/BufferMgr/source/MyDB_BufferManager.cc">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="250">
-          <caret line="173" column="43" lean-forward="true" selection-start-line="173" selection-start-column="43" selection-end-line="173" selection-end-column="43" />
+        <state relative-caret-position="521">
+          <caret line="270" column="57" lean-forward="false" selection-start-line="270" selection-start-column="57" selection-end-line="270" selection-end-column="57" />
           <folding>
             <element signature="e#44#83#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Main/BufferTest/source/BufferQUnit.cc">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="327">
+          <caret line="91" column="0" lean-forward="false" selection-start-line="91" selection-start-column="0" selection-end-line="91" selection-end-column="0" />
+          <folding>
+            <element signature="e#48#103#0" expanded="true" />
           </folding>
         </state>
       </provider>

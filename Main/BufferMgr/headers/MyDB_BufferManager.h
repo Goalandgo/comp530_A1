@@ -61,7 +61,7 @@ public:
 	void readData(string fileName, long offset, char* address);
     void writeData(string fileName, long offset, char* address);
     void addNewAddress(nodeptr cur);
-
+    void reCycleTempFile(nodeptr cur);
 
 private:
 	char* buffer;
@@ -72,6 +72,7 @@ private:
 	size_t numPages;
 	string tempFile;
 	int tempFileCurPosition;
+    queue<int> reCycledTempfile;
 
 	struct Hashing{
 		size_t operator()(const pair<string,long> x)const

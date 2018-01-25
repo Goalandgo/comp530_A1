@@ -30,6 +30,7 @@ MyDB_PageHandleBase :: ~MyDB_PageHandleBase () {
     if (page->handleCount == 0) {
         if (page->isAnon) {
             this->node->page->bufferManager->addNewAddress(this->node);
+            this->node->page->bufferManager->reCycleTempFile(this->node);
             this->node->page->bufferManager->removeNode(this->node);
         } else {
             page->isPinned = false;

@@ -5,8 +5,17 @@
 
 
 MyDB_Page::MyDB_Page(char *address, const MyDB_TablePtr &tableOwner, long offset, MyDB_BufferManager *bufferManager,
-                     bool isPinned, bool isAnon) : address(address), tableOwner(tableOwner), offset(offset),
-                                                   bufferManager(bufferManager), isPinned(isPinned), isAnon(isAnon) {}
+                     bool isPinned, bool isAnon){
+    this->address = address;
+    this->tableOwner = tableOwner;
+    this->offset = offset;
+    this->bufferManager = bufferManager;
+    this->isPinned = isPinned;
+    this->isAnon = isAnon;
+    this->isDirty = false;
+    this->handleCount = 0;
+    this->hasNotBeenEvicted = true;
+}
 
 MyDB_Page ::~MyDB_Page() {
 

@@ -44,7 +44,7 @@ int main () {
 		MyDB_TablePtr table1 = make_shared <MyDB_Table> ("tempTable", "foobar");
 
 		// allocate a pinned page
-		cout << "allocating pinned page\n";
+		cout << "allocating pinned page1111111111111\n";
 		MyDB_PageHandle pinnedPage = myMgr.getPinnedPage (table1, 0);
 		char *bytes = (char *) pinnedPage->getBytes ();
 		writeNums (bytes, 64, 0);
@@ -54,7 +54,7 @@ int main () {
 		// create a bunch of pinned pages and remember them
 		vector <MyDB_PageHandle> myHandles;
 		for (int i = 1; i < 10; i++) {
-			cout << "allocating pinned page\n";
+			cout << "allocating pinned page22222222222222\n";
 			MyDB_PageHandle temp = myMgr.getPinnedPage (table1, i);
 			char *bytes = (char *) temp->getBytes ();
 			writeNums (bytes, 64, i);
@@ -68,7 +68,7 @@ int main () {
 
 		// now remember 8 more pages
 		for (int i = 0; i < 8; i++) {
-			cout << "allocating pinned page\n";
+			cout << "allocating pinned page3333333333333333\n";
 			MyDB_PageHandle temp = myMgr.getPinnedPage (table1, i);
 			char *bytes = (char *) temp->getBytes ();
 
@@ -82,7 +82,7 @@ int main () {
 		}
 
 		// now correctly write nums at the 0th position
-		cout << "allocating unpinned page\n";
+		cout << "allocating unpinned page444444444444444444\n";
 		MyDB_PageHandle anotherDude = myMgr.getPage (table1, 0);
 		bytes = (char *) anotherDude->getBytes ();
 		writeSymbols (bytes, 64, 0);
@@ -90,7 +90,7 @@ int main () {
 		
 		// now do 90 more pages, for which we forget the handle immediately
 		for (int i = 10; i < 100; i++) {
-			cout << "allocating unpinned page\n";
+			cout << "allocating unpinned page5555555555555555\n";
 			MyDB_PageHandle temp = myMgr.getPage (table1, i);
 			char *bytes = (char *) temp->getBytes ();
 			writeNums (bytes, 64, i);
@@ -103,12 +103,12 @@ int main () {
 
 		// now get a pair of pages and write them
 		for (int i = 0; i < 100; i++) {
-			cout << "allocating pinned page\n";
+			cout << "allocating pinned page6666666666666666\n";
 			MyDB_PageHandle oneHandle = myMgr.getPinnedPage ();
 			char *bytes = (char *) oneHandle->getBytes ();
 			writeNums (bytes, 64, i);
 			oneHandle->wroteBytes ();
-			cout << "allocating pinned page\n";
+			cout << "allocating pinned page777777777777777\n";
 			MyDB_PageHandle twoHandle = myMgr.getPinnedPage ();
 			writeNums (bytes, 64, i);
 			twoHandle->wroteBytes ();
@@ -117,7 +117,7 @@ int main () {
 		// make a second table
 		MyDB_TablePtr table2 = make_shared <MyDB_Table> ("tempTable2", "barfoo");
 		for (int i = 0; i < 100; i++) {
-			cout << "allocating unpinned page\n";
+			cout << "allocating unpinned page8888888888888888\n"<<i<<endl;
 			MyDB_PageHandle temp = myMgr.getPage (table2, i);
 			char *bytes = (char *) temp->getBytes ();
 			writeLetters (bytes, 64, i);
@@ -128,6 +128,7 @@ int main () {
 
 	// UNIT TEST 2
 	{
+        cout << "enter unit test2\n";
 		MyDB_BufferManager myMgr (64, 16, "tempDSFSD");
 		MyDB_TablePtr table1 = make_shared <MyDB_Table> ("tempTable", "foobar");
 
