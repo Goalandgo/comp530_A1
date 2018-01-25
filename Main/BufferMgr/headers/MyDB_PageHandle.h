@@ -35,6 +35,8 @@ public:
     MyDB_PageHandleBase (nodeptr node);
 	~MyDB_PageHandleBase ();
 
+    nodeptr getNode();
+
 	// FEEL FREE TO ADD ADDITIONAL PUBLIC METHODS
 
 private:

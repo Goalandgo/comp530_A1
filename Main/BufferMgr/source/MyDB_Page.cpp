@@ -8,3 +8,6 @@ MyDB_Page::MyDB_Page(char *address, const MyDB_TablePtr &tableOwner, long offset
                      bool isPinned, bool isAnon) : address(address), tableOwner(tableOwner), offset(offset),
                                                    bufferManager(bufferManager), isPinned(isPinned), isAnon(isAnon) {}
 
+MyDB_Page ::~MyDB_Page() {
+
+}

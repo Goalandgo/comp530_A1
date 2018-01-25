@@ -59,6 +59,7 @@ public:
 	void reloadVictim(nodeptr victim);
 	void updateLRU(nodeptr cur);
 	void readData(string fileName, long offset, char* address);
+    void writeData(string fileName, long offset, char* address);
     void addNewAddress(nodeptr cur);
 
 
@@ -83,6 +84,7 @@ private:
 	};
 
 	unordered_map<pair<string, long>, nodeptr, Hashing> Map;
+    unordered_map<pair<string, long>, int, Hashing> filePool;
 	queue<char*> unUsedPages;
 
 

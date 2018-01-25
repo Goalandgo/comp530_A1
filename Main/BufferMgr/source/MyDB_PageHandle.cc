@@ -38,6 +38,9 @@ MyDB_PageHandleBase :: ~MyDB_PageHandleBase () {
     }
 }
 
+nodeptr MyDB_PageHandleBase :: getNode(){
+    return this->node;
+}
 
 
 #endif

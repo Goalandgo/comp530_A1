@@ -49,6 +49,8 @@ stdlib.h
 /Users/jinjianwei/Desktop/A1/Main/BufferMgr/source/MyDB_Page.cpp
 ../headers/MyDB_Page.h
 /Users/jinjianwei/Desktop/A1/Main/BufferMgr/headers/MyDB_Page.h
+../../Catalog/headers/MyDB_Table.h
+/Users/jinjianwei/Desktop/A1/Main/Catalog/headers/MyDB_Table.h
 
 /Users/jinjianwei/Desktop/A1/Main/BufferMgr/source/MyDB_PageHandle.cc
 memory
