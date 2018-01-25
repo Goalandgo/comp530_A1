@@ -63,6 +63,8 @@ memory
 /Users/jinjianwei/Desktop/A1/Main/BufferMgr/headers/MyDB_BufferManager.h
 
 /Users/jinjianwei/Desktop/A1/Main/BufferMgr/source/Node.cpp
+../headers/MyDB_Page.h
+/Users/jinjianwei/Desktop/A1/Main/BufferMgr/headers/MyDB_Page.h
 ../headers/Node.h
 /Users/jinjianwei/Desktop/A1/Main/BufferMgr/headers/Node.h
 

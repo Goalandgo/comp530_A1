@@ -11,5 +11,5 @@ Node::Node(MyDB_pagetrl page){
 }
 
 Node::~Node(){
-    this->page = NULL;
+    this->page = nullptr;
 }

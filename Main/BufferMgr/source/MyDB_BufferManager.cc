@@ -153,7 +153,7 @@ MyDB_BufferManager :: MyDB_BufferManager (size_t pageSize, size_t numPages, stri
 	this->tail = make_shared<Node>(nullptr);
     head->next = tail;
     tail->pre = head;
-	for(int i = 0; i < numPages; i++){
+	for(unsigned int i = 0; i < numPages; i++){
 		this->unUsedPages.push((this->buffer + i*pageSize));
 	}
 }
