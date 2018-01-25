@@ -3,6 +3,7 @@
 #define PAGE_HANDLE_H
 
 #include <memory>
+#include "Node.h"
 
 // page handles are basically smart pointers
 using namespace std;
@@ -30,13 +31,14 @@ public:
 	// this should decrement a reference count to the number of handles
 	// to the particular page that it references.  If the number of 
 	// references to a pinned page goes down to zero, then the page should
-	// become unpinned.  
+	// become unpinned.
+    MyDB_PageHandleBase ();
 	~MyDB_PageHandleBase ();
 
 	// FEEL FREE TO ADD ADDITIONAL PUBLIC METHODS
 
 private:
-
+	Node* node;
 	// YOUR CODE HERE
 };
 

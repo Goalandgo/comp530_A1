@@ -6,15 +6,15 @@
 #define A1_NODE_H
 
 #include "MyDB_Page.h"
-using namespace std;
 
+using namespace std;
 class Node{
         public:
-            MyDB_Page *page;
-            Node *pre;
-            Node *next;
+            MyDB_pagetrl page;
+            Node* pre;
+            Node* next;
 
-            Node(MyDB_Page * page);
+            Node(MyDB_pagetrl page);
             ~Node();
 
 };

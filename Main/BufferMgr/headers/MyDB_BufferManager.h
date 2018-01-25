@@ -2,8 +2,10 @@
 #ifndef BUFFER_MGR_H
 #define BUFFER_MGR_H
 
-#include "MyDB_PageHandle.h"
+#include <unordered_map>
+#include <queue>
 #include "../../Catalog/headers/MyDB_Table.h"
+#include "MyDB_PageHandle.h"
 #include "Node.h"
 
 
@@ -51,13 +53,13 @@ public:
 
 	// FEEL FREE TO ADD ADDITIONAL PUBLIC METHODS
 
-	void insertNode(Node * cur);
-	Node * removeNode(Node * cur);
-	Node * getVictim();
+	void insertNode(Node* cur);
+	Node* removeNode(Node* cur);
+	Node* getVictim();
 	bool evict();
-	void reloadVictim(MyDB_Page *victim);
-	void updateLRU(Node *cur);
-	void readTable(string fileName, long offset, char* address);
+	void reloadVictim(Node* victim);
+	void updateLRU(Node* cur);
+	void readData(string fileName, long offset, char* address);
 
 
 
@@ -65,8 +67,8 @@ public:
 private:
 	char* buffer;
 
-	Node *head;
-	Node *tail;
+	Node* head;
+	Node* tail;
 	size_t pageSize;
 	size_t numPages;
 	string tempFile;

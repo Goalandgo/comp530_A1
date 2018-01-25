@@ -2,19 +2,32 @@
 #ifndef BUFFER_MGR_C
 #define BUFFER_MGR_C
 
-#include "../headers/MyDB_PageHandle.h"
-#include "../../Catalog/headers/MyDB_Table.h"
+
 #include "../headers/MyDB_BufferManager.h"
-#include <string>
 #include <fcntl.h>
 #include <unistd.h>
 #include <stdlib.h>
 
 
+
 using namespace std;
 
 MyDB_PageHandle MyDB_BufferManager :: getPage (MyDB_TablePtr whichTable, long i) {
-	return nullptr;		
+    pair<string,long> key(whichTable->getName(),i);
+    auto it = this->Map.find(key);
+
+    if (it == this->Map.end()) {
+        if (!this->unUsedPages.empty()) {
+            char * addr = this->unUsedPages.front();
+
+
+        } else {
+
+        }
+    } else {
+
+    }
+
 }
 
 MyDB_PageHandle MyDB_BufferManager :: getPage () {
@@ -36,7 +49,7 @@ MyDB_BufferManager :: MyDB_BufferManager (size_t pageSize, size_t numPages, stri
 	this->pageSize = pageSize;
 	this->numPages = numPages;
 	this->tempFile = tempFile;
-	this-> = 0;
+	this->tempFileCurPosition = 0;
 	this->buffer = (char*) malloc(pageSize * numPages);
 	this->head = new Node(NULL);
 	this->tail = new Node(NULL);
@@ -50,14 +63,14 @@ MyDB_BufferManager :: MyDB_BufferManager (size_t pageSize, size_t numPages, stri
 MyDB_BufferManager :: ~MyDB_BufferManager () {
 }
 
-void readData(string fileName, long offset, char* address){
+void MyDB_BufferManager :: readData(string fileName, long offset, char* address){
     int fileHandle = open (fileName, O_CREAT|O_RDWR|O_SYNC, 0666);
     lseek(fileHandle, offset * this->pageSize,  SEEK_CUR);
     read(fileHandle, address, this->pageSize);
     close(fileHandle);
 }
 
-void insertNode(Node * cur){
+void MyDB_BufferManager :: insertNode(Node* cur){
     if (cur == NULL) return;
     Node* pre = this->tail->pre;
     pre->next = cur;
@@ -66,7 +79,7 @@ void insertNode(Node * cur){
     this->tail->pre = cur;
 }
 
-Node * removeNode(Node * cur){
+Node* MyDB_BufferManager :: removeNode(Node* cur){
     if (cur == NULL) return cur;
     Node* pre = cur->pre;
     Node* next = cur->next;
@@ -75,10 +88,10 @@ Node * removeNode(Node * cur){
     return cur;
 }
 
-Node * getVictim(){
-    Node *cur = this->head->next;
+Node* MyDB_BufferManager :: getVictim(){
+    Node* cur = this->head->next;
 
-    while (cur != this->tail && cur->isPinned) {
+    while (cur != this->tail && cur->page->isPinned) {
         cur = cur->next;
     }
 
@@ -89,28 +102,33 @@ Node * getVictim(){
     }
 }
 
-void updateLRU(Node *cur){
+void MyDB_BufferManager :: updateLRU(Node* cur){
     removeNode(cur);
     insertNode(cur);
 }
 
 // can be both types of page
-void reloadVictim(MyDB_Page *victim){
-    if (!this.unUsedPages.empty()) {
+void MyDB_BufferManager :: reloadVictim(Node* victim){
+    if (!this->unUsedPages.empty()) {
+        char *addr = this->unUsedPages.front();
 
+        string fileName = victim->page->isAnon ? this->tempFile : victim->page->tableOwner->getStorageLoc().c_str();
+        readData(fileName, victim->page->offset, addr);
+        victim->page->address = addr;
     } else {
-
+        this->evict();
+        reloadVictim(victim);
     }
 }
 
-bool evict(){
+bool MyDB_BufferManager :: evict(){
     Node* victim = getVictim();
 
     if (victim == NULL) return false;
 
     removeNode(victim);
 
-    MyDB_Page *page = victim->page;
+    MyDB_pagetrl page = victim->page;
 
     if (page->isDirty) {
         string fileName = page->isAnon ? page->tableOwner->getStorageLoc().c_str() : this->tempFile;
@@ -120,21 +138,15 @@ bool evict(){
         write(fileHandle, page->address, this->pageSize);
     }
 
-    page->hasNotBeenEvicted = true;
+    page->hasNotBeenEvicted = false;
 
-    if (page->handleCount > 0) {
-        if(page->tableOwner != NULL) {
-            pair<string, long> key(pageRef->tableOwner->getName(), page->offset);
-            this->Map.erase(key);
-        }
-    } else {
-        delete victim;
+    if (page->handleCount == 0) {
+        pair<string,long> key(page->tableOwner->getName(),page->offset);
+        this->Map.erase(key);
+        victim = NULL;
     }
 
     this->unUsedPages.push(page->address);
-
-
-
 }
 	
 #endif

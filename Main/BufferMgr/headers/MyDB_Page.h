@@ -8,18 +8,16 @@
 #include <memory>
 #include <string>
 
-#include "../../Catalog/headers/MyDB_Table.h"
+#include "MyDB_BufferManager.h"
 
-class MyDB_BufferManager;
+class MyDB_Page;
+typedef shared_ptr <MyDB_Page> MyDB_pagetrl;
 
 using namespace std;
 
 class MyDB_Page{
 
 public:
-    MyDB_Page(char* address,  MyDB_TablePtr tableOwner, long index, MyDB_BufferManager * bufferManager, bool isPinned, bool isAnon);
-
-    MyDB_Page(char *address);
 
     MyDB_Page(char *address, const MyDB_TablePtr &tableOwner, long offset, MyDB_BufferManager *bufferManager,
               bool isPinned, bool isAnon);
