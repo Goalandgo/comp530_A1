@@ -5,14 +5,17 @@
 #ifndef A1_NODE_H
 #define A1_NODE_H
 
+class Node;
 #include "MyDB_Page.h"
-
 using namespace std;
+
+typedef shared_ptr <Node> nodeptr;
+
 class Node{
         public:
             MyDB_pagetrl page;
-            Node* pre;
-            Node* next;
+            nodeptr pre;
+            nodeptr next;
 
             Node(MyDB_pagetrl page);
             ~Node();

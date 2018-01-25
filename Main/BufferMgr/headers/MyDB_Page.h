@@ -8,9 +8,12 @@
 #include <memory>
 #include <string>
 
-#include "MyDB_BufferManager.h"
+#include "../../Catalog/headers/MyDB_Table.h"
+
+
 
 class MyDB_Page;
+class MyDB_BufferManager;
 typedef shared_ptr <MyDB_Page> MyDB_pagetrl;
 
 using namespace std;

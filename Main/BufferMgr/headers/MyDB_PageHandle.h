@@ -32,13 +32,13 @@ public:
 	// to the particular page that it references.  If the number of 
 	// references to a pinned page goes down to zero, then the page should
 	// become unpinned.
-    MyDB_PageHandleBase ();
+    MyDB_PageHandleBase (nodeptr node);
 	~MyDB_PageHandleBase ();
 
 	// FEEL FREE TO ADD ADDITIONAL PUBLIC METHODS
 
 private:
-	Node* node;
+	nodeptr node;
 	// YOUR CODE HERE
 };
 

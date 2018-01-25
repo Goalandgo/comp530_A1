@@ -1,5 +1,5 @@
 #include "../headers/MyDB_Page.h"//
-
+#include "../../Catalog/headers/MyDB_Table.h"
 // Created by 金建伟 on 2018/1/23.
 //
 

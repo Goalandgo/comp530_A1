@@ -6,10 +6,9 @@
 #include <queue>
 #include "../../Catalog/headers/MyDB_Table.h"
 #include "MyDB_PageHandle.h"
-#include "Node.h"
-
 
 using namespace std;
+
 
 class MyDB_BufferManager {
 
@@ -53,22 +52,21 @@ public:
 
 	// FEEL FREE TO ADD ADDITIONAL PUBLIC METHODS
 
-	void insertNode(Node* cur);
-	Node* removeNode(Node* cur);
-	Node* getVictim();
+	void insertNode(nodeptr cur);
+	nodeptr removeNode(nodeptr cur);
+	nodeptr getVictim();
 	bool evict();
-	void reloadVictim(Node* victim);
-	void updateLRU(Node* cur);
+	void reloadVictim(nodeptr victim);
+	void updateLRU(nodeptr cur);
 	void readData(string fileName, long offset, char* address);
-
-
+    void addNewAddress(nodeptr cur);
 
 
 private:
 	char* buffer;
 
-	Node* head;
-	Node* tail;
+	nodeptr head;
+	nodeptr tail;
 	size_t pageSize;
 	size_t numPages;
 	string tempFile;
@@ -84,7 +82,7 @@ private:
 		}
 	};
 
-	unordered_map<pair<string, long>, Node*, Hashing> Map;
+	unordered_map<pair<string, long>, nodeptr, Hashing> Map;
 	queue<char*> unUsedPages;
 
 
