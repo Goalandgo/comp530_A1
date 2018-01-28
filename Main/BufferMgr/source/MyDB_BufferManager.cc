@@ -203,11 +203,10 @@ void MyDB_BufferManager :: writeData(string fileName, long offset, char* address
     }
     lseek(fileHandle, offset * this->pageSize,  SEEK_SET);
     write(fileHandle, address, this->pageSize);
-    cout<<"write to file "<<fileName<<" "<<fileHandle<<" contents: "<<address<<endl;
 }
 
 void MyDB_BufferManager :: insertNode(nodeptr cur){
-    if (cur == NULL) return;
+    if (cur == nullptr) return;
     nodeptr pre = this->tail->pre;
     pre->next = cur;
     cur->pre = pre;
@@ -216,7 +215,7 @@ void MyDB_BufferManager :: insertNode(nodeptr cur){
 }
 
 nodeptr MyDB_BufferManager :: removeNode(nodeptr cur){
-    if (cur == NULL) return cur;
+    if (cur == nullptr) return cur;
     nodeptr pre = cur->pre;
     nodeptr next = cur->next;
     pre->next = next;
@@ -227,12 +226,13 @@ nodeptr MyDB_BufferManager :: removeNode(nodeptr cur){
 nodeptr MyDB_BufferManager :: getVictim(){
     nodeptr cur = this->head->next;
 
-    while (cur != this->tail && cur->page->isPinned) {
+    while (cur != this->tail && (cur->page->isPinned || !cur->page->hasNotBeenEvicted)) {
         cur = cur->next;
     }
 
     if (cur == this->tail) {
-        return NULL;
+        cout<<"error! can not find victim!!!"<<endl;
+        return nullptr;
     } else {
         return cur;
     }
@@ -247,9 +247,12 @@ void MyDB_BufferManager :: updateLRU(nodeptr cur){
 void MyDB_BufferManager :: reloadVictim(nodeptr victim){
     if (!this->unUsedPages.empty()) {
         char *addr = this->unUsedPages.front();
+        this->unUsedPages.pop();
 
         string fileName = victim->page->isAnon ? this->tempFile : victim->page->tableOwner->getStorageLoc();
         readData(fileName, victim->page->offset, addr);
+        victim->page->isDirty = false;
+        victim->page->hasNotBeenEvicted = true;
         victim->page->address = addr;
     } else {
         this->evict();
@@ -260,10 +263,9 @@ void MyDB_BufferManager :: reloadVictim(nodeptr victim){
 
 bool MyDB_BufferManager :: evict(){
     nodeptr victim = getVictim();
+    if (victim == nullptr) return false;
 
-    if (victim == NULL) return false;
-
-    removeNode(victim);
+   // removeNode(victim);
 
     MyDB_pagetrl page = victim->page;
 
@@ -278,7 +280,7 @@ bool MyDB_BufferManager :: evict(){
     if (page->handleCount == 0) {
         pair<string,long> key(page->tableOwner->getName(),page->offset);
         this->Map.erase(key);
-        victim = NULL;
+        victim = nullptr;
     }
 
     this->unUsedPages.push(page->address);
